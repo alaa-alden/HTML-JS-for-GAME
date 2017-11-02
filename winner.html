@@ -14,20 +14,35 @@
     name:"p"
   }
   // enamy
-      var enamy={
+  var listenamy={};
+
+      var enamy1={
         name:"E",
         x:150,
         y:350,
         spdx:10,
         spdy:15,
-      }
+        id:'E1'
+      };
+      listenamy['E1']=enamy1;
       var enamy2={
-        name:"e",
+        name:"E",
         x:350,
         y:150,
         spdx:10,
         spdy:15,
-      }
+        id:'E2'
+      };
+      listenamy['E2']=enamy2;
+      var enamy3={
+        name:"E",
+        x:11,
+        y:350,
+        spdx:10,
+        spdy:5,
+        id:'E3'
+      };
+      listenamy['E3']=enamy3;
 ///GAME
 
   setInterval(update,40);
@@ -35,9 +50,11 @@
 
 
   function update() {
+    ctx.clearRect(0,0,WIDTH,HEIGHT);
     updateEntity(player);
-    updateEntity(enamy);
-    updateEntity(enamy2);
+    for (var key in listenamy) {
+        updateEntity(listenamy[key]);
+    }
   }
 
   // function
