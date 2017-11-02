@@ -14,35 +14,34 @@
     name:"p"
   }
   // enamy
-  var listenamy={};
-
-      var enamy1={
+  var enemyList={};
+      var enemy1={
         name:"E",
         x:150,
         y:350,
         spdx:10,
         spdy:15,
-        id:'E1'
-      };
-      listenamy['E1']=enamy1;
-      var enamy2={
+        id:"E1"
+      }
+      enemyList['E1']=enemy1;
+      var enemy2={
         name:"E",
         x:350,
         y:150,
         spdx:10,
         spdy:15,
         id:'E2'
-      };
-      listenamy['E2']=enamy2;
-      var enamy3={
-        name:"E",
-        x:11,
-        y:350,
-        spdx:10,
-        spdy:5,
-        id:'E3'
-      };
-      listenamy['E3']=enamy3;
+      }
+    enemyList['E2']=enemy2;
+    var enemy3={
+      name:"E",
+      x:11,
+      y:350,
+      spdx:10,
+      spdy:5,
+      id:'E3'
+    }
+  enemyList['E3']=enemy3;
 ///GAME
 
   setInterval(update,40);
@@ -52,9 +51,8 @@
   function update() {
     ctx.clearRect(0,0,WIDTH,HEIGHT);
     updateEntity(player);
-    for (var key in listenamy) {
-        updateEntity(listenamy[key]);
-    }
+    for(var key in enemyList)
+    {updateEntity(enemyList[key]);}
   }
 
   // function
