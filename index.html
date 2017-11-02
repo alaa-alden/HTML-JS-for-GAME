@@ -1,0 +1,38 @@
+<canvas width="500" height="500" id="ctx" style="border: 1px solid #000000 ;"></canvas>
+<script>
+    var ctx=document.getElementById('ctx').getContext("2d");
+
+    //1. modify setting
+    ctx.font="30px Arial";
+    ctx.fillStyle="red";
+    ctx.globalAlpha=0.5; //transparency  0=invisible or 1 for visible
+
+
+    //2. draw something
+    // ctx.fillText("Holle",50,50); //write text ... ctx.fillText("text",x,y)
+    // ctx.fillRect(50,50,100,100);  //draw rectangle .... ctx.fillrect(startX,startY,width,height)
+    // ctx.clearRect(75,75,100,100); //clear rectangle .... ctx.clearRect(startX,startY,width,height)
+    var x=50;
+    var y=50;
+    var inx=0,iny=0;
+    for (var i = 0; i < 20; i++) {
+      ctx.fillText('p',x+inx,y+iny);
+      inx+=20;
+      iny+=20;
+    }
+    //   // enamy
+    //   enamy_x+=enamy_spdx;
+    //   enamy_y+=enamy_spdy;
+    //   ctx.fillText(enamy,enamy_x,enamy_y);
+    //   if(enamy_x>WIDTH || enamy_x<0){
+    //     console.log(message);
+    //     enamy_spdx=-enamy_spdx;
+    //   }
+    //
+    //   if(enamy_y>HEIGHT || enamy_y<0){
+    //     console.log(message);
+    //     enamy_spdy=-enamy_spdy;
+    //   }
+    // }
+</script>
+<!--  -->

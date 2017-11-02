@@ -1,0 +1,60 @@
+<canvas id="ctx" width="500" height="500" style="border:1px solid #000000"></canvas>
+<script type="text/javascript">
+  var ctx=document.getElementById("ctx").getContext("2d");
+  ctx.font='30px Arial';
+  var HEIGHT=500;
+  var WIDTH=500;
+  var message="Bouncing"
+// player
+  var player={
+    x:50,
+    y:40,
+    spdx:30,
+    spdy:5,
+    name:"p"
+  }
+  // enamy
+      var enamy={
+        name:"E",
+        x:150,
+        y:350,
+        spdx:10,
+        spdy:15,
+      }
+      var enamy2={
+        name:"e",
+        x:350,
+        y:150,
+        spdx:10,
+        spdy:15,
+      }
+///GAME
+
+  setInterval(update,40);
+
+
+
+  function update() {
+    updateEntity(player);
+    updateEntity(enamy);
+    updateEntity(enamy2);
+  }
+
+  // function
+  function updateEntity(play){
+    play.x+=play.spdx;
+    play.y+=play.spdy;
+    ctx.fillText(play.name,play.x,play.y);
+    if(play.x>WIDTH || play.x<0){
+      console.log(message);
+      play.spdx=-play.spdx;
+    }
+    if(play.y>HEIGHT || play.y<0){
+      console.log(message);
+      play.spdy=-play.spdy;
+    }
+  }
+
+
+
+</script>
